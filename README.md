@@ -12,16 +12,16 @@ Download the latest version of the sources, cd in source dir, then launch:
 make
 ```
 
-phpdrmaa.so is created in modules subdir. Copy it in php modules dir:
+drmaa.so is created in modules subdir. Copy it in php modules dir:
 
 ```bash
-cp modules/phpdrmaa.so /usr/lib/php/modules/
+cp modules/drmaa.so /usr/lib/php/modules/
 ```
 
 And load it in php.ini:
 
 ```bash
-echo 'extension=phpdrmaa.so' > /etc/php.ini
+echo 'extension=drmaa.so' > /etc/php.ini
 ```
 
 And finally restart httpd.
