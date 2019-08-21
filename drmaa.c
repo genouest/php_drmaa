@@ -75,8 +75,8 @@ ZEND_GET_MODULE(drmaa)
 /* {{{ PHP_INI
  */
 PHP_INI_BEGIN()
-	PHP_INI_ENTRY("drmaa.stdlog", ":/tmp", PHP_INI_ALL, NULL)
-	PHP_INI_ENTRY("drmaa.errorlog", ":/tmp", PHP_INI_ALL, NULL)
+	PHP_INI_ENTRY("drmaa.stdlog", ":/tmp/drmaa.o%A", PHP_INI_ALL, NULL)
+	PHP_INI_ENTRY("drmaa.errorlog", ":/tmp/drmaa.e%A", PHP_INI_ALL, NULL)
 	PHP_INI_ENTRY("drmaa.native",	NULL, PHP_INI_ALL, NULL)
 PHP_INI_END()
 
