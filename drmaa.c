@@ -155,7 +155,7 @@ PHP_FUNCTION(qstat)
 	char error[DRMAA_ERROR_STRING_BUFFER];
 	int errnum = 0;
 	char *jobid = NULL;
-	int jobid_len;
+	size_t jobid_len;
 
 	int status = 0;
 
@@ -197,7 +197,7 @@ PHP_FUNCTION(qdel)
 	char error[DRMAA_ERROR_STRING_BUFFER];
 	int errnum = 0;
 	char *jobid = NULL;
-	int jobid_len;
+	size_t jobid_len;
 
 	int status = 0;
 
@@ -239,11 +239,11 @@ PHP_FUNCTION(qdel)
 PHP_FUNCTION(qsub)
 {
 	char *command = NULL;
-	int command_len;
+	size_t command_len;
 	char *jobName = NULL;
-	int jobName_len;
+	size_t jobName_len;
 	char *native = NULL;
-	int native_len;
+	size_t native_len;
 	char error[DRMAA_ERROR_STRING_BUFFER];
 	char contact[DRMAA_CONTACT_BUFFER];
 	int errnum = 0;
