@@ -294,9 +294,15 @@ PHP_FUNCTION(qsub)
 		}
 	}
 
-	errnum = drmaa_set_attribute(jt, DRMAA_REMOTE_COMMAND, command, error, DRMAA_ERROR_STRING_BUFFER);
-	if (errnum != DRMAA_ERRNO_SUCCESS) {
-		php_error_docref(NULL TSRMLS_CC, E_ERROR, "Could not set drmaa command attribute '%s': %s", command, error);
+	if ((command != NULL) && (command_len > 0)) {
+		errnum = drmaa_set_attribute(jt, DRMAA_REMOTE_COMMAND, command, error, DRMAA_ERROR_STRING_BUFFER);
+		if (errnum != DRMAA_ERRNO_SUCCESS) {
+			php_error_docref(NULL TSRMLS_CC, E_ERROR, "Could not set drmaa command attribute '%s': %s", command, error);
+			RETURN_NULL();
+		}
+	}
+	else {
+		php_error_docref(NULL TSRMLS_CC, E_ERROR, "Could not set drmaa command, empty attribute");
 		RETURN_NULL();
 	}
 
